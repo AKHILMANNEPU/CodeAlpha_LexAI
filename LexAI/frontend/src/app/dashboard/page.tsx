@@ -53,43 +53,53 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 border-r border-white/10 bg-white/5 p-6 flex flex-col backdrop-blur-xl">
-        <div className="flex items-center space-x-2 mb-12">
-          <img src="/logo.png" alt="LexAI Logo" className="h-10 w-10 object-contain drop-shadow-md" />
-          <span className="font-bold text-xl tracking-tight">LexAI</span>
+      <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-white/10 bg-white/5 p-4 md:p-6 flex flex-col md:backdrop-blur-xl shrink-0">
+        <div className="flex items-center justify-between mb-4 md:mb-12">
+          <div className="flex items-center space-x-2">
+            <img src="/logo.png" alt="LexAI Logo" className="h-8 w-8 md:h-10 md:w-10 object-contain drop-shadow-md" />
+            <span className="font-bold text-lg md:text-xl tracking-tight">LexAI</span>
+          </div>
+          <div className="flex md:hidden items-center space-x-3">
+            <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-xs">
+              {user?.name ? user.name.substring(0, 2).toUpperCase() : 'JD'}
+            </div>
+            <Button onClick={handleSignOut} size="sm" className="h-8 px-2 bg-red-500/10 text-red-400 hover:bg-red-500/20 rounded-md">
+              <LogOut className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
         
-        <nav className="flex-1 space-y-2">
-          <Link href="/dashboard">
-            <Button className="w-full justify-start bg-white/10 border-white/20">
+        <nav className="flex flex-row overflow-x-auto md:flex-col md:flex-1 gap-2 md:space-y-2 pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden scroll-smooth">
+          <Link href="/dashboard" className="shrink-0">
+            <Button className="w-full justify-start bg-white/10 border-white/20 px-3 md:px-4">
               <Globe className="mr-2 h-4 w-4" /> Dashboard
             </Button>
           </Link>
-          <Link href="/translator">
-            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5">
+          <Link href="/translator" className="shrink-0">
+            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5 px-3 md:px-4">
               <Languages className="mr-2 h-4 w-4" /> Translator
             </Button>
           </Link>
-          <Link href="/history">
-            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5">
+          <Link href="/history" className="shrink-0">
+            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5 px-3 md:px-4">
               <History className="mr-2 h-4 w-4" /> History
             </Button>
           </Link>
-          <Link href="/settings">
-            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5">
+          <Link href="/settings" className="shrink-0">
+            <Button className="w-full justify-start bg-transparent border-transparent hover:bg-white/5 px-3 md:px-4">
               <Settings className="mr-2 h-4 w-4" /> Settings
             </Button>
           </Link>
         </nav>
 
-        <div className="pt-6 border-t border-white/10 mt-auto">
+        <div className="hidden md:block pt-6 border-t border-white/10 mt-auto">
           <div className="flex items-center space-x-3 mb-4">
             <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center font-bold">
               {user?.name ? user.name.substring(0, 2).toUpperCase() : 'JD'}
             </div>
-            <div>
-              <p className="text-sm font-medium">{user?.name || 'John Doe'}</p>
-              <p className="text-xs text-white/50">{user?.email || 'Pro Plan'}</p>
+            <div className="overflow-hidden">
+              <p className="text-sm font-medium truncate">{user?.name || 'John Doe'}</p>
+              <p className="text-xs text-white/50 truncate">{user?.email || 'Pro Plan'}</p>
             </div>
           </div>
           <Button 

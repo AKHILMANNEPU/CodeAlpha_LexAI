@@ -23,7 +23,7 @@ export default function Home() {
       rotationSpeed={0.004}
       className="bg-background text-foreground"
     >
-      <main className="flex flex-col items-center justify-center p-6 text-center w-full max-w-5xl mx-auto mt-20">
+      <main className="flex flex-col items-center justify-center p-6 text-center w-full max-w-5xl mx-auto mt-12 md:mt-20 pb-20 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

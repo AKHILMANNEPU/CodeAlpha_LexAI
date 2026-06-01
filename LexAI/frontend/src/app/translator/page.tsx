@@ -274,20 +274,6 @@ export default function TranslatorPage() {
         </Button>
       </motion.div>
 
-      {/* Fixed Sign Out Button Bottom Left */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="fixed bottom-6 left-6"
-      >
-        <Button 
-          onClick={handleSignOut}
-          className="text-red-400 hover:text-red-300 hover:bg-red-500/10 border-transparent bg-transparent"
-        >
-          <LogOut className="mr-2 h-4 w-4" /> Sign Out
-        </Button>
-      </motion.div>
     </div>
   );
 }
