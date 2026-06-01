@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      router.push("/dashboard");
+      router.push("/translator");
     }
   }, [router]);
 

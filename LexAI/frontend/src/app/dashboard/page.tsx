@@ -28,8 +28,8 @@ export default function DashboardPage() {
         }
         
         const [statsRes, historyRes] = await Promise.all([
-          fetch("http://localhost:5000/api/translations/stats", { headers: { "Authorization": `Bearer ${token}` }}),
-          fetch("http://localhost:5000/api/translations", { headers: { "Authorization": `Bearer ${token}` }})
+          fetch(`https://codealpha-lexai.onrender.com/api/translations/stats`, { headers: { "Authorization": `Bearer ${token}` }}),
+          fetch(`https://codealpha-lexai.onrender.com/api/translations`, { headers: { "Authorization": `Bearer ${token}` }})
         ]);
         
         if (statsRes.ok) setStats(await statsRes.json());

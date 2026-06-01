@@ -98,7 +98,7 @@ export default function TranslatorPage() {
     
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/translations", {
+      const res = await fetch(`https://codealpha-lexai.onrender.com/api/translations`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",

@@ -39,7 +39,7 @@ export default function ResetPasswordPage() {
     setError("");
 
     try {
-      const res = await fetch(`http://localhost:5000/api/auth/resetpassword/${token}`, {
+      const res = await fetch(`https://codealpha-lexai.onrender.com/api/auth/reset-password/${params.token}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),

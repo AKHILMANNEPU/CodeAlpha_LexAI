@@ -21,7 +21,7 @@ export default function HistoryPage() {
         router.push("/login");
         return;
       }
-      const res = await fetch("http://localhost:5000/api/translations", {
+      const res = await fetch(`https://codealpha-lexai.onrender.com/api/translations`, {
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
@@ -42,7 +42,7 @@ export default function HistoryPage() {
   const deleteItem = async (id: string) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:5000/api/translations/${id}`, {
+      await fetch(`https://codealpha-lexai.onrender.com/api/translations/${id}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` }
       });
